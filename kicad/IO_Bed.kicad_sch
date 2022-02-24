@@ -2636,6 +2636,15 @@
     (uuid ffd0008a-2956-40b9-8a0c-7d6f8ccff8f1)
   )
 
+  (text "TO BED" (at 237.49 35.56 0)
+    (effects (font (size 4 4)) (justify left bottom))
+    (uuid 46199a50-607d-4021-aa29-b2b177e052d7)
+  )
+  (text "FROM HANDSET" (at 219.71 139.7 0)
+    (effects (font (size 4 4)) (justify left bottom))
+    (uuid cfb2501c-d23c-4573-88b1-5f584a485c9b)
+  )
+
   (label "DIN_IN_COMMON" (at 181.61 129.54 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 337228e9-16d2-4bf6-963e-fb1c3d28ef79)

@@ -2668,9 +2668,18 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 472d8313-4353-47cc-a8b7-296fc3aa56b8)
   )
+  (text "Raspberry PI Zero 2W\n\nThis will be mounted inverted\non the PCB to reduce height and\nallow for thermal linking between \nCPU and base board."
+    (at 130.81 74.93 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 9e797e50-48f4-4ecc-9ff5-cc0e61ca154d)
+  )
   (text "Mounting Holes" (at 76.2 179.07 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid aebe7dcf-9c8b-4ec3-8e36-4ca0179f8137)
+  )
+  (text "BEDBERRY v1.0" (at 181.61 177.8 0)
+    (effects (font (size 4 4)) (justify left bottom))
+    (uuid f359a9d2-5859-4363-a1e2-bc6d7199d115)
   )
 
   (label "GPIO5_AUX_OUT" (at 95.25 124.46 0)
