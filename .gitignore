@@ -28,7 +28,7 @@ bedberry-backups/
 *.ses
 
 # Exported BOM files
-*.xml
-*.csv
+kicad/*.xml
+kicad/*.csv
 
 gerbers/
