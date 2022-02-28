@@ -10,3 +10,4 @@ Based around the [Raspberry Pi Zero 2W](https://www.raspberrypi.com/products/ras
 - Link to BLE tilt sensors to allow bed position 'presets'.
 - Control of other devices via bluetooth, IR or WiFi, including TVs, lights, SwitchBots etc.
 
+![3D Render of PCB](images/bedberry_pcb_3d_A.jpg)
