@@ -1,0 +1,34 @@
+[
+  {
+    address: 0x20,
+    type: "mcp",
+    name: "okin",
+    details: {
+      A: {
+        int_gpio: "25",
+        read_bits: 0x7f,
+        poll_period: 0,
+        default: 0x00,
+      },
+      B: {
+        write_bits: 0x7f,
+      },
+    },
+  },
+  {
+    address: 0x24,
+    type: "mcp",
+    name: "buttons",
+    details: {
+      A: {
+        int_gpio: 23,
+        read_bits: 0xff,
+        poll_period: 2000,
+        default: 0xff,
+      },
+      B: {
+        write_bits: 0x7f,
+      },
+    },
+  },
+]

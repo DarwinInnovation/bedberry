@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    "test/**/*.ts",
+    "test/**/*.spec.ts",
+    ".git",
+    "node_modules"
+  ],
+  "watch": [
+    "dist"
+  ],
+  "ext": "ts,js,json,yaml,yml",
+  "delay": 2500
+}

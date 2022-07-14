@@ -1,0 +1,15 @@
+{
+  mcp_port: "okin.A",
+  head: {
+    up: 0,
+    down: 3
+  },
+  feet: {
+    up: 1,
+    down: 2
+  },
+  platform: {
+    up: 5,
+    down: 4
+  },
+}
