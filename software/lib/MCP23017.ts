@@ -57,12 +57,12 @@ export class MCP23017Port extends EventEmitter {
 
   constructor(
     private mcp: MCP23017,
-    private port: MCP23017PortId,
+    port: MCP23017PortId,
     private details: MCP23017PortCfgDetails
   ) {
     super();
 
-    const isA = port === MCP23017PortId.A;
+    const isA = (port === MCP23017PortId.A);
     this.offset = isA ? 0 : 1;
 
     this.curRdValue = details.default & details.read_bits;
@@ -129,11 +129,11 @@ export class MCP23017Port extends EventEmitter {
   }
 
   private _isr() {
-    const intcap = this.mcp.readByteSync(MCP23017Reg.INTCAP + this.offset);
+    //const intcap = this.mcp.readByteSync(MCP23017Reg.INTCAP + this.offset);
     const gpio0 = this.mcp.readByteSync(MCP23017Reg.GPIO + this.offset);
-    this._update(intcap);
+    //this._update(intcap);
     this._update(gpio0);
-    console.log(intcap, gpio0);
+    //console.log(intcap, gpio0);
   }
 
   private _update(val: number) {
