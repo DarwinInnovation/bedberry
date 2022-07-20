@@ -3,12 +3,12 @@
   acc_name: 'phidget',
   max_move_duration: 50,
   head: {
-    up: 0,
-    down: 3
+    up: 2,
+    down: 0,
   },
   feet: {
-    up: 2,
-    down: 1
+    up: 3,
+    down: 1,
   },
   platform: {
     up: 5,

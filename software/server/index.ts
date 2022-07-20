@@ -36,13 +36,13 @@ const bed = new OkinBed(l, "bed", loadCfg(cfgDir, "okin.json5"));
 
 const bedRemote = new OkinRemote(l, bed, loadCfg(cfgDir, "okinRemote.json5"));
 
-if (fs.existsSync(path.join(cfgDir, "multibutton.json5"))) {
-  const multibutton = new MultiButton(
-    l,
-    bed,
-    loadCfg(cfgDir, "multibutton.json5")
-  );
-}
+// if (fs.existsSync(path.join(cfgDir, "multibutton.json5"))) {
+//   const multibutton = new MultiButton(
+//     l,
+//     bed,
+//     loadCfg(cfgDir, "multibutton.json5")
+//   );
+// }
 
 var express_app = express();
 

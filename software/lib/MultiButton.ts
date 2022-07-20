@@ -35,7 +35,6 @@ export interface MultiButtonActionTypes {
 }
 
 export interface MultiButtonCfg {
-  mcp_port: string;
   bit: number;
   timings?: MultiButtonCoreConfig;
   actions: MultiButtonActionTypes[];
@@ -45,7 +44,6 @@ type VoidFunction = null | (() => void);
 
 export class MultiButton {
   private mask: number;
-  private mcpPort: MCP23017Port;
   private mb: MultiButtonCore;
   private currentAction: null | string = null;
   private onRelease: VoidFunction;
@@ -60,13 +58,7 @@ export class MultiButton {
   ) {
     this.mb = new MultiButtonCore(log, cfg.timings);
 
-    this.mcpPort = MCP23017.PortByName(cfg.mcp_port);
-
-    this.mask = 1 << (cfg.bit || 0);
-
-    this.mcpPort.on("change", (bits: number, value: number) => {
-      this._onChange(bits, value);
-    });
+    this.mask = 1 << cfg.bit;
     this.log.info("Multibutton");
 
     this.mb.on("click", (count: number) => {
@@ -82,10 +74,15 @@ export class MultiButton {
     this._setupActions(cfg.actions);
   }
 
-  _onChange(diff: number, value: number) {
-    if (diff & this.mask) {
-      this.mb.update((value & this.mask) == 0);
-    }
+  inputChange(val: boolean) {
+    //if (diff & this.mask) {
+      this.log.info(`mb change ${val?'high':'low'}`);
+      this.mb.update(val);
+    //}
+  }
+
+  getMask(): number {
+    return this.mask;
   }
 
   _onClick(count: number) {
