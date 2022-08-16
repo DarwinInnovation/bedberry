@@ -32,3 +32,4 @@ kicad/*.xml
 kicad/*.csv
 
 gerbers/
+node_modules/

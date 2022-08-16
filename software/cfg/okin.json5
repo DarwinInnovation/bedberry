@@ -1,0 +1,18 @@
+{
+  mcp_port: "okin.B",
+  acc_name: 'phidget',
+  max_move_duration: 50,
+  head: {
+    up: 2,
+    down: 0,
+  },
+  feet: {
+    up: 3,
+    down: 1,
+  },
+  platform: {
+    up: 5,
+    down: 4
+  },
+  presetAngles: [40, 35, 30, 22, 15, 8, 0]
+}

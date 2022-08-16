@@ -1,0 +1,29 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch MCP read test",
+      "cwd": "${workspaceFolder}/software",
+      "program": "${workspaceFolder}/software/bin/mcp23017_read.ts",
+      "outFiles": [
+        "${workspaceFolder}/software/dist/**/*.js"
+      ]
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch bed out test",
+      "cwd": "${workspaceFolder}/software",
+      "program": "${workspaceFolder}/software/bin/okin_bed_test.ts",
+      "outFiles": [
+        "${workspaceFolder}/software/dist/**/*.js"
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  mcp_port: "okin.A",
+  head: {
+    up: 0,
+    down: 3
+  },
+  feet: {
+    up: 1,
+    down: 2
+  },
+  platform: {
+    up: 5,
+    down: 4
+  },
+  multibuttons: [
+    {
+  bit: 6,
+  timings: {
+    wait_press: 400,
+    wait_release: 400
+  },
+  actions: [
+    {},
+    {
+      hold: {
+        type: "bed",
+        actuator: "head",
+        dirIsUp: true,
+      },
+    },
+    {
+      hold: {
+        type: "bed",
+        actuator: "head",
+        dirIsUp: false,
+      },
+    },
+    {
+      hold: {
+        type: "bed",
+        actuator: "feet",
+        dirIsUp: true,
+      },
+    },
+    {
+      hold: {
+        type: "bed",
+        actuator: "feet",
+        dirIsUp: false,
+      },
+    },
+  ],
+}
+  ]
+}
