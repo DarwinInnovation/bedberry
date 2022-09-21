@@ -135,8 +135,19 @@ export class MultiButton {
     });
   }
 
-  _onUrl(details: MultiButtonActionBed) {
-
+  _onUrl(details: MultiButtonActionURL) {
+    this.log.info(`URL ${details.url}`);
+    fetch(details.url)
+    .then((res) => {
+      this.log.info(`  URL ${details.url} Success`);
+    })
+    .catch((res: Response) => {
+      this.log.info(`  URL ${details.url} Failed: ${res.status}`);
+      res.text()
+      .then((txt)=>{
+        this.log.info(`  ${txt}`);
+      })
+    });
   }
 
   _calcHandler(action: MultiButtonAction) {
