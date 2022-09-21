@@ -1,5 +1,5 @@
 {
-  mcp_port: "buttons.A",
+  mcp_port: "okin.A",
   bit: 0,
   timings: {
     wait_press: 400,
