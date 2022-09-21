@@ -57,14 +57,14 @@ export class Actuator {
 
   move(dir_is_up: boolean) {
     this.log.info("%s: actuator %s", this.name, dir_is_up ? "UP" : "DOWN");
-    this.mcpPort.setBit(this.cfg.down, !dir_is_up);
-    this.mcpPort.setBit(this.cfg.up, dir_is_up);
+    this.mcpPort.setBit(this.cfg.down, dir_is_up);
+    this.mcpPort.setBit(this.cfg.up, !dir_is_up);
   }
 
   stop() {
     this.log.info("%s: actuator STOP", this.name);
-    this.mcpPort.setBit(this.cfg.down, false);
-    this.mcpPort.setBit(this.cfg.up, false);
+    this.mcpPort.setBit(this.cfg.down, true);
+    this.mcpPort.setBit(this.cfg.up, true);
   }
 
   cmd(inCmd: ActuatorCmd) {
