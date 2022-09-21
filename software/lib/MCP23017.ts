@@ -94,6 +94,10 @@ export class MCP23017Port extends EventEmitter {
     this.readRegSync(MCP23017Reg.INTCAP);
     this.readRegSync(MCP23017Reg.GPIO);
 
+    if (this.details.write_bits) {
+      this.writeRegSync(MCP23017Reg.GPIO, this.details.write_bits);
+    }
+
     if (this.details.int_gpio !== null) {
       this.intGpio.watch((level) => {
         this._isr();
