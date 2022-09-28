@@ -1,0 +1,14 @@
+[Unit]
+Description=bedberry
+Documentation=https://github.com/DarwinInnovation/bedberry
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/bedberry/software
+ExecStart=/usr/bin/node /home/pi/bedberry/software/dist/server/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
