@@ -1,5 +1,6 @@
 import {exec} from "child_process";
 
+import fetch from 'cross-fetch';
 import { Logger } from "./Logger";
 
 import { MCP23017, MCP23017Port } from "./MCP23017";
@@ -76,7 +77,7 @@ export class MultiButton {
 
   inputChange(val: boolean) {
     //if (diff & this.mask) {
-      this.log.info(`mb change ${val?'high':'low'}`);
+      this.log.debug(`mb change ${val?'high':'low'}`);
       this.mb.update(val);
     //}
   }
