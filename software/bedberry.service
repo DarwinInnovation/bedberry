@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Type=simple
 User=pi
-Environment=LOG_LEVEL=warn
+Environment=LOG_LEVEL=info
 WorkingDirectory=/home/pi/bedberry/software
 ExecStart=/usr/bin/node /home/pi/bedberry/software/dist/server/index.js
 Restart=on-failure

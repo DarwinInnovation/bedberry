@@ -82,7 +82,7 @@ name: string   */
 
   public writeByteSync(addr: number, subaddr: number, data: number) {
     const wbuf = Buffer.from([subaddr, data]);
-    this.info(
+    this.debug(
       "addr %s.%s wr > %s",
       addr.toString(16),
       subaddr.toString(16),
@@ -97,7 +97,7 @@ name: string   */
     this.i2cBus.i2cWriteSync(addr, wbuf.length, wbuf);
 
     const l = this.i2cBus.i2cReadSync(addr, rbuf.length, rbuf);
-    this.info(
+    this.debug(
       "addr %s.%s rd < %s",
       addr.toString(16),
       subaddr.toString(16),

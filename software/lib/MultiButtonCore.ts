@@ -57,7 +57,7 @@ export class MultiButtonCore extends EventEmitter {
 
   private setState(newState: MultiButtonState) {
     if (newState != this.state) {
-      this.log.info(`MultiButton: ${this.state} -> ${newState}`);
+      this.log.debug(`MultiButton: ${this.state} -> ${newState}`);
       this.state = newState;
     }
   }

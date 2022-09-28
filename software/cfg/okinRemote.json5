@@ -49,6 +49,18 @@
         dirIsUp: false,
       },
     },
+        {
+      click: {
+        type: "url",
+        url: "https://wheelberry.darwin-innovation.com/skill/blanket/Boost?user=richard%40miller-smith.com"
+      }
+    },
+    {
+      click: {
+        type: "url",
+        url: "https://wheelberry.darwin-innovation.com/skill/blanket/Off?user=richard%40miller-smith.com"
+      }
+    },
   ],
 }
   ]
