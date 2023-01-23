@@ -80,9 +80,9 @@ export class OkinRemote {
   _onMbChange(bits: number, value: number) {
     for (const mb of this.multibuttons) {
       const mask = mb.getMask();
-      this.log.info(`mb mask: ${mask}`);
+      this.log.debug(`mb mask: ${mask}`);
       if (bits & mask) {
-        this.log.info("mb change %s %s", bits.toString(16), (value & mask) == 0);
+        this.log.debug("mb change %s %s", bits.toString(16), (value & mask) == 0);
         mb.inputChange((value & mask) == 0);
         bits &= ~mask;
         value &= ~mask;
@@ -115,7 +115,7 @@ export class OkinRemote {
   }
 
   _onChange(bits: number, value: number) {
-    this.log.info("remote change %s %s", bits.toString(16), value.toString(16));
+    this.log.debug("remote change %s %s", bits.toString(16), value.toString(16));
 
     if (bits & this.mbMask) {
       this._onMbChange(bits & this.mbMask, value & this.mbMask)

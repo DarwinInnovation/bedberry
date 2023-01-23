@@ -1,5 +1,6 @@
 import {exec} from "child_process";
 
+import fetch from 'cross-fetch';
 import { Logger } from "./Logger";
 
 import { MCP23017, MCP23017Port } from "./MCP23017";
@@ -76,7 +77,7 @@ export class MultiButton {
 
   inputChange(val: boolean) {
     //if (diff & this.mask) {
-      this.log.info(`mb change ${val?'high':'low'}`);
+      this.log.debug(`mb change ${val?'high':'low'}`);
       this.mb.update(val);
     //}
   }
@@ -135,8 +136,19 @@ export class MultiButton {
     });
   }
 
-  _onUrl(details: MultiButtonActionBed) {
-
+  _onUrl(details: MultiButtonActionURL) {
+    this.log.info(`URL ${details.url}`);
+    fetch(details.url)
+    .then((res) => {
+      this.log.info(`  URL ${details.url} Success`);
+    })
+    .catch((res: Response) => {
+      this.log.info(`  URL ${details.url} Failed: ${res.status}`);
+      res.text()
+      .then((txt)=>{
+        this.log.info(`  ${txt}`);
+      })
+    });
   }
 
   _calcHandler(action: MultiButtonAction) {
